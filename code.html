@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- UPDATED TITLE -->
+    <title>Earn FF Diamond - Get Free Fire Diamonds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="auth-section">
+            <!-- UPDATED HEADING -->
+            <h2>Welcome to Earn FF Diamond!</h2>
+            <p>Login or Register to start earning.</p>
+            <input type="text" id="ff-uid-login" placeholder="Enter Your Free Fire UID">
+            <button id="login-btn">Login / Register with FF UID</button>
+            <p id="auth-status"></p>
+        </div>
+
+        <div id="main-app-section" style="display: none;">
+            <h2>Hi, <span id="user-display-id"></span>!</h2>
+            <p>Welcome to <strong style="color: #e91e63;">Earn FF Diamond</strong></p> <!-- Added a small welcome back to the new name -->
+            <p>Your Tokens: <span id="token-balance">0</span></p>
+            <p>Your Free Fire UID: <span id="user-ff-uid-display"></span></p>
+
+            <hr>
+
+            <div id="tap-to-earn">
+                <h3>Tap to Earn Tokens</h3>
+                <button id="tap-btn">Tap Me! (1 Tap = 5s Ad)</button>
+                <p>Taps remaining for Spin Unlock: <span id="taps-for-spin">10</span></p>
+            </div>
+
+            <hr>
+
+            <div id="spin-wheel-section">
+                <h3>Spin Wheel</h3>
+                <p>Spins available: <span id="spin-count">0</span></p>
+                <img src="https://via.placeholder.com/150?text=Spin+Wheel" alt="Spin Wheel" id="wheel-img">
+                <button id="spin-btn" disabled>Spin!</button>
+                <p id="spin-result"></p>
+            </div>
+
+            <hr>
+
+            <div id="redeem-section">
+                <h3>Redeem Tokens for FF Diamonds</h3>
+                <p>Tokens needed for 100 Diamonds: 1000 (example)</p>
+                <input type="number" id="redeem-amount" value="1000" placeholder="Tokens to redeem" readonly>
+                <button id="redeem-btn">Redeem 100 Diamonds</button>
+                <p id="redeem-status"></p>
+            </div>
+
+            <button id="logout-btn">Logout</button>
+        </div>
+
+        <!-- Ad Simulation Modal -->
+        <div id="ad-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <p>Simulating 5-second ad...</p>
+                <div id="ad-timer">5</div>
+                <button id="skip-ad-btn" style="display:none;">Claim Reward</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
